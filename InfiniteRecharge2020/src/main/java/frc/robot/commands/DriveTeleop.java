@@ -9,13 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-
-public class DriveForward extends CommandBase {
+public class DriveTeleop extends CommandBase {
   /**
-   * Creates a new DriveForward.
+   * Creates a new DriveTeleop.
    */
-   
-  public DriveForward() {
+  public DriveTeleop() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
