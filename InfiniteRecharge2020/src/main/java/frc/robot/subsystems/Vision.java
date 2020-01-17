@@ -14,7 +14,7 @@ public class Vision extends SubsystemBase {
    * Creates a new Vision.
    */
   public Vision() {
-
+    //Utilizes vision processing for better alignment when shooting and video with Limelight
   }
 
   @Override

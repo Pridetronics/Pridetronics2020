@@ -14,7 +14,7 @@ public class Shooter extends SubsystemBase {
    * Creates a new Shooter.
    */
   public Shooter() {
-
+    //Launches power cells (balls) into the goals (levels 1, 2, and 3).
   }
 
   @Override

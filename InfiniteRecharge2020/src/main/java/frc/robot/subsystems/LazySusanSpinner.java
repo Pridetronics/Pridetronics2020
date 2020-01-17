@@ -9,12 +9,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Climb extends SubsystemBase {
+public class LazySusanSpinner extends SubsystemBase {
   /**
-   * Creates a new Climb.
+   * Creates a new LazySusanSpinner.
    */
-  public Climb() {
-    //Lifts up, grabs bar, pulls self up
+  public LazySusanSpinner() {
+    //Traction wheel that spins the Lazy Susan
   }
 
   @Override

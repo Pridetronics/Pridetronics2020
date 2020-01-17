@@ -14,7 +14,7 @@ public class Intake extends SubsystemBase {
    * Creates a new Intake.
    */
   public Intake() {
-
+    //Collect power cell balls
   }
 
   @Override
