@@ -15,6 +15,7 @@ import frc.robot.subsystems.Autonomous;
 import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.LazySusanSpinner;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Vision;
 
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
   public static Drive drive;
+  public static Intake intake;
   
 
   /**
@@ -42,6 +44,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    intake = new Intake();
   }
 
   /**
