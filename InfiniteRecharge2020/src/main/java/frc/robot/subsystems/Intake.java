@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants;
 
-
 public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
