@@ -8,7 +8,11 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.Talon;
+
+import com.revrobotics.CANEncoder;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.*;
+import com.revrobotics.CANSparkMaxLowLevel.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants;
 
@@ -16,8 +20,8 @@ public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
    */
-  private static Talon intakeMotorLeft = Constants.intakeMotorLead;
-  private static Talon intakeMotorRight = Constants.intakeMotorFollow;
+  private static CANSparkMax intakeMotorLeft = Constants.intakeMotorLead;
+  private static CANSparkMax intakeMotorRight = Constants.intakeMotorFollow;
   public Intake() {
     //Collect power cell balls
   }
