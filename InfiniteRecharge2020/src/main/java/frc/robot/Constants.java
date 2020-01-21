@@ -23,5 +23,16 @@ import com.revrobotics.CANSparkMaxLowLevel.*;
 public final class Constants {
     public static CANSparkMax intakeMotorLead; 
     public static CANSparkMax intakeMotorFollow;
+    {
+
+    intakeMotorLead = new CANSparkMax(4, null); 
+    intakeMotorLead.setInverted(true); 
+    intakeMotorLead.set(0); 
+    
+        intakeMotorFollow = new CANSparkMax(5, null); 
+        intakeMotorFollow.setInverted(true); 
+        
+        intakeMotorFollow.follow(intakeMotorLead);
+    }
 }
 
