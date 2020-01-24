@@ -4,13 +4,16 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants;
+import com.revrobotics.CANEncoder;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMax.*;
+import com.revrobotics.CANSparkMaxLowLevel.*;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Intake extends SubsystemBase {
   /**
@@ -30,12 +33,15 @@ public class Intake extends SubsystemBase {
   {
     SmartDashboard.putBoolean("Intake", true);
     intakeMotorLeft.set(.55);
+    intakeMotorRight.set(-.55);
   }
   public void outtake()
   {
     intakeMotorLeft.set(-.55);
+    intakeMotorRight.set(.55);
   }
   public void stop(){
     intakeMotorLeft.set(0);
+    intakeMotorRight.set(0);
     }
 }
