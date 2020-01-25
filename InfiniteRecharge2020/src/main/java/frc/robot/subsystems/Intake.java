@@ -9,19 +9,22 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.*;
-import com.revrobotics.CANSparkMaxLowLevel.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.Constants;
+import edu.wpi.first.wpilibj.Talon;
 
 public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
    */
-  private static CANSparkMax intakeMotorLeft = Constants.intakeMotorLead;
-  private static CANSparkMax intakeMotorRight = Constants.intakeMotorFollow;
+  public Joystick gamepad1 = new Joystick(0);
+
+
+  private static Talon intakeMotorExternal = Constants.intakeMotorExternal;
+  private static Talon intakeMotorVerticalLeft = Constants.intakeMotorVerticalLeft;
+  private static Talon intakeMotorVerticalRight = Constants.intakeMotorVerticalRight;
+ 
   public Intake() {
     //Collect power cell balls
   }
@@ -30,16 +33,19 @@ public class Intake extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
-  public void intake()
+  public void intakeExternal()
   {
-    SmartDashboard.putBoolean("Intake", true);
-    intakeMotorLeft.set(.55);
+    SmartDashboard.putBoolean("Intake External", true);
+    intakeMotorExternal.set(.55);
   }
-  public void outtake()
+  public void intakeVertical()
   {
-    intakeMotorLeft.set(-.55);
+    SmartDashboard.putBoolean("Intake Vertical", true);
+    intakeMotorVerticalLeft.set(.55);
+    intakeMotorVerticalRight.set(55);
+
   }
   public void stop(){
-    intakeMotorLeft.set(0);
+    intakeMotorExternal.set(0);
     }
 }

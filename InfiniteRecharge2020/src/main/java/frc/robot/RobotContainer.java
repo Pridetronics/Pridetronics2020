@@ -32,7 +32,6 @@ public class RobotContainer {
   Joystick gamepadJoystick = new Joystick(0);
   
   JoystickButton leftJoystickButton = new JoystickButton(gamepadJoystick, 0);
-  JoystickButton rightJoystickButton = new JoystickButton(gamepadJoystick, 1);
 
 
 

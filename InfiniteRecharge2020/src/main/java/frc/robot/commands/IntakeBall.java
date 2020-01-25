@@ -29,7 +29,8 @@ public class IntakeBall extends CommandBase {
   @Override
   public void execute() {
     SmartDashboard.putBoolean("Intake Running", true);
-    Robot.intake.intake();
+    Robot.intake.intakeExternal(); 
+    Robot.intake.intakeVertical();
 
   }
 

@@ -6,11 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.*;
-import com.revrobotics.CANSparkMaxLowLevel.*;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -21,18 +17,23 @@ import com.revrobotics.CANSparkMaxLowLevel.*;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static CANSparkMax intakeMotorLead; 
-    public static CANSparkMax intakeMotorFollow;
+    public static Talon intakeMotorExternal; 
+    public static Talon intakeMotorVerticalLeft; 
+    public static Talon intakeMotorVerticalRight; 
     {
 
-    intakeMotorLead = new CANSparkMax(4, null); 
-    intakeMotorLead.setInverted(true); 
-    intakeMotorLead.set(0); 
+    intakeMotorExternal = new Talon(5);
+    intakeMotorExternal.setInverted(true); 
+    intakeMotorExternal.set(0); 
     
-        intakeMotorFollow = new CANSparkMax(5, null); 
-        intakeMotorFollow.setInverted(true); 
-        
-        intakeMotorFollow.follow(intakeMotorLead);
+    intakeMotorVerticalLeft = new Talon(6);
+    intakeMotorVerticalLeft.setInverted(true);
+    intakeMotorVerticalLeft.set(0);
+
+    intakeMotorVerticalRight = new Talon(7);
+    intakeMotorVerticalRight.setInverted(true);
+    intakeMotorVerticalRight.set(0);
+
     }
 }
 
