@@ -53,6 +53,7 @@ public class DriveJoystick extends CommandBase {
       leftValue = m_joystickDriver.getRawAxis(1);
 
       m_robotDrive.tankDrive(leftValue, rightValue);
+      
     } 
     /*
     else {
