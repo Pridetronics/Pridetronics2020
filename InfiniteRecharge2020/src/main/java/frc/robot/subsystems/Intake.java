@@ -13,17 +13,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Talon;
+import com.revrobotics.CANSparkMax;
 
 public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
    */
-  public Joystick gamepad1 = new Joystick(0);
 
-
-  private static Talon intakeMotorExternal = Constants.intakeMotorExternal;
-  private static Talon intakeMotorVerticalLeft = Constants.intakeMotorVerticalLeft;
-  private static Talon intakeMotorVerticalRight = Constants.intakeMotorVerticalRight;
+   //This system is currently in a mode to work for Spark Max motors. Needs to switch into Talon  
+  /* private static Talon intakeMotorExternal = Constants.intakeMotorExternal;
+  private static Talon intakeMotorVertical = Constants.intakeMotorVertical;
+ */
+  private static CANSparkMax intakeMotorExternal = Constants.intakeMotorExternal;
+  private static CANSparkMax intakeMotorVertical = Constants.intakeMotorVertical;
+  
  
   public Intake() {
     //Collect power cell balls
@@ -39,13 +42,14 @@ public class Intake extends SubsystemBase {
     intakeMotorExternal.set(.55);
   }
   public void intakeVertical()
-  {
+  {  
     SmartDashboard.putBoolean("Intake Vertical", true);
-    intakeMotorVerticalLeft.set(.55);
-    intakeMotorVerticalRight.set(55);
+    intakeMotorVertical.set(.55);
+   
 
   }
   public void stop(){
     intakeMotorExternal.set(0);
+    intakeMotorVertical.set(0);
     }
 }

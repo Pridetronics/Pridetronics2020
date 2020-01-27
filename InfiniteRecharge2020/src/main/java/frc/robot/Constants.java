@@ -7,7 +7,7 @@
 
 package frc.robot;
 import edu.wpi.first.wpilibj.Talon;
-
+import com.revrobotics.CANSparkMax;
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -17,22 +17,25 @@ import edu.wpi.first.wpilibj.Talon;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static Talon intakeMotorExternal; 
-    public static Talon intakeMotorVerticalLeft; 
-    public static Talon intakeMotorVerticalRight; 
+   /* public static Talon intakeMotorExternal;
+    public static Talon intakeMotorVertical;  */
+    public static CANSparkMax intakeMotorExternal;
+    public static CANSparkMax intakeMotorVertical;
+
     {
 
-    intakeMotorExternal = new Talon(5);
+   // intakeMotorExternal = new Talon(5);
+    intakeMotorExternal = new CANSparkMax(1, null);
     intakeMotorExternal.setInverted(true); 
     intakeMotorExternal.set(0); 
     
-    intakeMotorVerticalLeft = new Talon(6);
-    intakeMotorVerticalLeft.setInverted(true);
-    intakeMotorVerticalLeft.set(0);
+    //intakeMotorVerticalLeft = new Talon(6);
+    intakeMotorVertical = new CANSparkMax(2, null);
+    intakeMotorVertical.setInverted(true);
+    intakeMotorVertical.set(0);
+    
 
-    intakeMotorVerticalRight = new Talon(7);
-    intakeMotorVerticalRight.setInverted(true);
-    intakeMotorVerticalRight.set(0);
+  
 
     }
 }

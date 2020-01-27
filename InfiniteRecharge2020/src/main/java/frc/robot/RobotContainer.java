@@ -6,41 +6,48 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeBall;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton; 
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
- * This class is where the bulk of the robot should be declared.  Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
- * (including subsystems, commands, and button mappings) should be declared here.
+ * This class is where the bulk of the robot should be declared. Since
+ * Command-based is a "declarative" paradigm, very little robot logic should
+ * actually be handled in the {@link Robot} periodic methods (other than the
+ * scheduler calls). Instead, the structure of the robot (including subsystems,
+ * commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  public Joystick joystick;
+  public Joystick gamepad;
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-
+  public JoystickButton button; // Intake External
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   private final Intake robotIntake = new Intake();
   Joystick gamepadJoystick = new Joystick(0);
   
-  JoystickButton leftJoystickButton = new JoystickButton(gamepadJoystick, 0);
 
+  JoystickButton joystickIntake = new JoystickButton(gamepadJoystick, 6);
 
 
   /**
-   * The container for the robot.  Contains subsystems, OI devices, and commands.
+   * The container for the robot. Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    button = new JoystickButton(gamepad, 6);
+    
+
   }
 
   /**
@@ -62,4 +69,12 @@ public class RobotContainer {
    // An ExampleCommand will run in autonomous
     return m_autoCommand;
   }
+  public Joystick getJoystick() {
+    return joystick;
+  }
+
+  public Joystick getGamepad() {
+    return gamepad;
+  }
+
 }
