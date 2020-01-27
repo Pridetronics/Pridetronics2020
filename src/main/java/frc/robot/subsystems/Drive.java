@@ -39,7 +39,7 @@ public class Drive extends SubsystemBase {
 
     driveMode = 0;
 
-    // Enables movement through the field using west coast driv
+    // Enables movement through the field using west coast drive
     
     
 
@@ -90,7 +90,7 @@ public void setDrive() {
 
 
   public void tankDrive(double leftValue, double rightValue) {
-
+    robotDrive.tankDrive(leftValue, rightValue);
 
   }
 

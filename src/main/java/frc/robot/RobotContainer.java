@@ -9,7 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
-
+import frc.robot.commands.DriveJoystick;
 import frc.robot.subsystems.Drive;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -54,7 +54,10 @@ public class RobotContainer {
     this.joystickDriver = new Joystick(0); // 'this.' Grabs a variable specifically
     this.joystickShooter = new Joystick(1); // ^^ Creates less confusion in the system
     
+    robotDrive = new Drive(1, 2); 
 
+    robotDrive.setDefaultCommand(new DriveJoystick(joystickDriver, robotDrive));
+    
     /*
     leftDriveMotor = new CANSparkMax(1, MotorType.kBrushless);
     leftDriveMotor.setInverted(true); 
@@ -66,7 +69,6 @@ public class RobotContainer {
     */
     
     
-    robotDrive = new Drive(1, 2); 
  
   //Joystick gamepadJoystick = new Joystick(0);
 
