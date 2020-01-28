@@ -11,7 +11,7 @@ package frc.robot;
 //import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 //import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.IdleMode;
+/* import com.revrobotics.CANSparkMax.IdleMode;
 
 import com.revrobotics.CANSparkMax.*;
 import com.revrobotics.CANSparkMaxLowLevel.*;
@@ -21,11 +21,11 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Victor; */
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import com.revrobotics.CANPIDController;
+//import com.revrobotics.CANPIDController;
 
-import com.revrobotics.ControlType;
+//import com.revrobotics.ControlType;
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -36,11 +36,11 @@ import com.revrobotics.ControlType;
  */
 public final class Constants {
 
-    public static DifferentialDrive robotDrive; // Creates new differential drive
 
     public static CANSparkMax leftDriveMotorLead; // Creates new talon motor for leading left drive
     public static CANSparkMax rightDriveMotorLead; // Creates new talon motor for leading right drive
-  
+
+    public static DifferentialDrive robotDrive; // Creates new differential drive
   
     public static void init() {
 

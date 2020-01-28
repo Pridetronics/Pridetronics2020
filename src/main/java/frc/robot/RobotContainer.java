@@ -48,8 +48,6 @@ public class RobotContainer { // The robot's subsystems and commands are defined
     // This helps set the default command. It sets it to DriveJoystick so that way RobotContainer
     // can grab the information and utilize it for the given controller, in this case joystickDriver
 
-    // JoystickButton leftJoystickButton = new JoystickButton(gamepadJoystick, 0);
-    // JoystickButton rightJoystickButton = new JoystickButton(gamepadJoystick, 1);
   
     // Configure the button bindings
     configureButtonBindings();
