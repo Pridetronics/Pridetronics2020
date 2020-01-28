@@ -7,17 +7,20 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import edu.wpi.first.wpilibj2.command.ScheduleCommand;
-//import frc.robot.subsystems.Autonomous;
 import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Vision;
+
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.TimedRobot;
+
 import edu.wpi.first.wpilibj.Joystick;
+
+//import frc.robot.subsystems.Autonomous;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,23 +30,21 @@ import edu.wpi.first.wpilibj.Joystick;
  * project.
  */
 public class Robot extends TimedRobot {
+  
   public static final String RobotContainer = null;
 
   private Command m_autonomousCommand;
 
   public RobotContainer m_robotContainer;
-    
-  public static Joystick gamepad;
 
-  /**
-   * This function is run when the robot is first started up and should be used
-   * for any initialization code.
-   */
+   /* This function is run when the robot is first started up and should be used
+   for any initialization code. */
   @Override
   public void robotInit() {
     // Instantiate our RobotContainer. This will perform all our button bindings,
     // and put our
     // autonomous chooser on the dashboard.
+    
     m_robotContainer = new RobotContainer();
     
   }
@@ -67,14 +68,11 @@ public class Robot extends TimedRobot {
     // robot's periodic
     // block in order for anything in the Command-based framework to work.
 
-
-
     CommandScheduler.getInstance().run();
   }
 
-  /**
-   * This function is called once each time the robot enters Disabled mode.
-   */
+  
+  // This function is called once each time the robot enters Disabled mode.   
   @Override
   public void disabledInit() {
   }
@@ -83,23 +81,20 @@ public class Robot extends TimedRobot {
   public void disabledPeriodic() {
   }
 
-  /**
-   * This autonomous runs the autonomous command selected by your
-   * {@link RobotContainer} class.
-   */
+  //This autonomous runs the autonomous command selected by your {@link RobotContainer} class.
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
+    if (m_autonomousCommand != null)    {
+
+
+      m_autonomousCommand.schedule(); // This was all pre-created, worry about this later
     }
   }
 
-  /**
-   * This function is called periodically during autonomous.
-   */
+  // This function is called periodically during autonomous.
   @Override
   public void autonomousPeriodic() {
   }
@@ -116,14 +111,12 @@ public class Robot extends TimedRobot {
     }
   }
 
-  /**
-   * This function is called periodically during operator control.
-   */
+   // This function is called periodically during operator control.
   @Override
   public void teleopPeriodic() {
 
     CommandScheduler.getInstance().run();
-      
+    // This was not in here, add it. It runs doTeleop which is needed to operate player movement
   }
 
   @Override
@@ -132,9 +125,7 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().cancelAll();
   }
 
-  /**
-   * This function is called periodically during test mode.
-   */
+  // This function is called periodically during test mode.
   @Override
   public void testPeriodic() {
   }

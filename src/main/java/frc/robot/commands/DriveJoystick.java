@@ -8,20 +8,18 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+//import edu.wpi.first.wpilibj.drive.RobotDriveBase;
+
+import frc.robot.subsystems.Drive;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
+
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.drive.RobotDriveBase;
-import frc.robot.subsystems.Drive;
 
-
-public class DriveJoystick extends CommandBase {
-  /**
-   * Creates a new DriveJoystick.
-   */
+public class DriveJoystick extends CommandBase { //Creates a new DriveJoystick.
+  
   private Joystick m_joystickDriver;
  
-
   public Drive m_robotDrive;
 
   private int driveMode;
@@ -29,10 +27,12 @@ public class DriveJoystick extends CommandBase {
   public DriveJoystick(Joystick joystickDriver, Drive robotDrive) {
     //driveMode = Robot.driveMode;
     // Use addRequirements() here to declare subsystem dependencies.
-    m_joystickDriver = joystickDriver;
-    m_robotDrive = robotDrive;
+    m_joystickDriver = joystickDriver; // Grabs the joystick from RobotContainer
+    m_robotDrive = robotDrive; //Grabs robotDrive from Drive
     
-    addRequirements(robotDrive);
+    addRequirements(robotDrive); 
+    // Allows the default command (this file) to talk to the main subsystem
+    // robotDrive is used as it's calls the differential drive in the Drive SUBSYSTEM
   }
 
   // Called when the command is initially scheduled.
@@ -45,17 +45,15 @@ public class DriveJoystick extends CommandBase {
   @Override
   public void execute() {
 
-    System.out.println("Beginning");
-
     if (driveMode == 0) {
-      System.out.println("tankDrive");
+      System.out.println("Tank Drive");
 
-      double rightValue, leftValue;
-      rightValue = m_joystickDriver.getRawAxis(5);
-      leftValue = m_joystickDriver.getRawAxis(1);
+      double rightValue, leftValue; // Sets these up as doubles, allows to make it into axis
+      rightValue = m_joystickDriver.getRawAxis(5); // Right Joystick verticle axis
+      leftValue = m_joystickDriver.getRawAxis(1); // Left joystick verticle axis
 
       m_robotDrive.tankDrive(leftValue, rightValue);
-      
+      // Defines how the joysticks will operate     
     } 
     /*
     else {
@@ -70,7 +68,6 @@ public class DriveJoystick extends CommandBase {
       
     }
     */
-    System.out.println("End");
 
   }
 

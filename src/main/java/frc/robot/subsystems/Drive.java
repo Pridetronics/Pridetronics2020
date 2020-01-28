@@ -18,17 +18,12 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.SpeedController;
 
-public class Drive extends SubsystemBase {
-  /**
-   * Creates a new Drive.
-   */
+public class Drive extends SubsystemBase { // Creates a new Drive.
    
-
   public DifferentialDrive robotDrive;
   public int driveMode;
 
@@ -36,27 +31,22 @@ public class Drive extends SubsystemBase {
   private CANSparkMax rightDriveMotor;
  
   public Drive(int leftDriveMotorAddress, int rightDriveMotorAddress) {
-
+    // The ints inside the params of Drive () is called in RobotContainer
     driveMode = 0;
-
-    // Enables movement through the field using west coast drive
-    
-    
-
+ 
     leftDriveMotor = new CANSparkMax(leftDriveMotorAddress, MotorType.kBrushless);
-    leftDriveMotor.setInverted(true); 
-    leftDriveMotor.set(0); 
+    leftDriveMotor.setInverted(true); // Inverts Left Drive Motor
+    leftDriveMotor.set(0); // Sets speed to 0 (anywhere between -1 and 1)
 
     rightDriveMotor = new CANSparkMax(rightDriveMotorAddress, MotorType.kBrushless); // Assigns Leading Right Drive Motor to Talon #2
-    rightDriveMotor.setInverted(true); // Inverts Leading Right Drive Motor
+    rightDriveMotor.setInverted(true); // Inverts Right Drive Motor
     rightDriveMotor.set(0); // Sets speed to 0 (anywhere between -1 and 1)
     
     robotDrive = new DifferentialDrive(leftDriveMotor, rightDriveMotor);
+    // Constructs the differential drive with the motors
 
-    SmartDashboard.putString("Drive Mode:", "Tank");
-                                                                                                              
+    SmartDashboard.putString("Drive Mode:", "Tank");                                                                                                              
   }
-
 
 
 public void setDrive() {
@@ -74,8 +64,9 @@ public void setDrive() {
     */
   }
 
+
   public void initDefaultCommand() {
-    //setDefaultCommand(new DriveTeleop());
+    // setDefaultCommand(new DriveTeleop());
   }
 
 
@@ -88,10 +79,12 @@ public void setDrive() {
   }
 
 
-
   public void tankDrive(double leftValue, double rightValue) {
-    robotDrive.tankDrive(leftValue, rightValue);
-
+    // This method was not here, it was created to run the axis values in DriveJoystick
+    // Defines the variables so that way tank can work
+    // Located in Drive because the drivetrain is grabbed from this subsystem
+    
+    robotDrive.tankDrive(leftValue, rightValue); // Grabs the raw axis from DriveJoystick    
   }
-
+  
 }
