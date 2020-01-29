@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Intake; 
 import frc.robot.commands.DriveJoystick;
-import frc.robot.commands.IntakeTrigger;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
