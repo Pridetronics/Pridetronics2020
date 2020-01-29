@@ -8,30 +8,23 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.*;
 
-public class IntakeBall extends CommandBase {
+public class Autonomous extends CommandBase {
   /**
-   * Creates a new IntakeBall.
+   * Creates a new Autonomous.
    */
-  public IntakeBall() {
+  public Autonomous() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    SmartDashboard.putBoolean("Intake Running", false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    SmartDashboard.putBoolean("Intake Running", true);
-    Robot.intake.intakeExternal(); 
-    Robot.intake.intakeVertical();
-
   }
 
   // Called once the command ends or is interrupted.
@@ -44,5 +37,4 @@ public class IntakeBall extends CommandBase {
   public boolean isFinished() {
     return false;
   }
-
 }
